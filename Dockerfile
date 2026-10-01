@@ -7,7 +7,13 @@ COPY packages/contracts/package.json ./packages/contracts/
 COPY packages/core/package.json ./packages/core/
 COPY apps/renderer/package.json ./apps/renderer/
 COPY apps/server/package.json ./apps/server/
-RUN npm ci --workspace @invoice-builder/renderer --workspace @invoice-builder/server
+COPY apps/desktop/package.json ./apps/desktop/
+COPY scripts/postinstall.cjs ./scripts/postinstall.cjs
+# Full install (not --workspace-scoped): build:renderer/webserver/migrations invoke
+# root-level devDependencies (vite, rimraf, typescript) directly, not just workspace deps.
+# SKIP_ELECTRON_REBUILD: the root postinstall rebuilds sqlite3 for Electron, which isn't needed here.
+ENV SKIP_ELECTRON_REBUILD=true
+RUN npm ci
 
 COPY . .
 
@@ -36,8 +42,11 @@ COPY --from=builder /app/packages/contracts/dist /app/packages/contracts/dist
 COPY --from=builder /app/packages/core/package.json /app/packages/core/package.json
 COPY --from=builder /app/packages/core/dist /app/packages/core/dist
 COPY --from=builder /app/apps/server/package.json /app/apps/server/package.json
+COPY scripts/postinstall.cjs ./scripts/postinstall.cjs
 
 # Install only the server workspace and its runtime dependency graph.
+# SKIP_ELECTRON_REBUILD: the root postinstall rebuilds sqlite3 for Electron, which isn't needed here.
+ENV SKIP_ELECTRON_REBUILD=true
 RUN npm ci --omit=dev --workspace @invoice-builder/server
 
 EXPOSE 3000 3001
