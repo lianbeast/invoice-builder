@@ -228,7 +228,7 @@ export const Menu: FC<Props> = ({
           isSelected: false,
           isToggle: false,
           onClick: () => {
-            getApi().openUrl('https://github.com/piratuks/invoice-builder/blob/main/docs/guides/index.md');
+            getApi().openUrl('https://piratuks.github.io/invoice-builder/docs/guides/');
           }
         },
         {
@@ -248,7 +248,7 @@ export const Menu: FC<Props> = ({
           isSelected: false,
           isToggle: false,
           onClick: () => {
-            getApi().openUrl('https://github.com/piratuks/invoice-builder/blob/main/docs/privacy-policy.md');
+            getApi().openUrl('https://piratuks.github.io/invoice-builder/docs/privacy-policy/');
           }
         },
         {
@@ -258,7 +258,7 @@ export const Menu: FC<Props> = ({
           isToggle: false,
           isSelected: false,
           onClick: () => {
-            getApi().openUrl('https://github.com/piratuks/invoice-builder/blob/main/docs/terms-of-use.md');
+            getApi().openUrl('https://piratuks.github.io/invoice-builder/docs/terms-of-use/');
           }
         }
       ]
@@ -317,7 +317,7 @@ export const Menu: FC<Props> = ({
           isToggle: false,
           isSelected: false,
           onClick: () => {
-            getApi().openUrl('https://github.com/piratuks/invoice-builder/blob/main/docs/supporters.md');
+            getApi().openUrl('https://piratuks.github.io/invoice-builder/docs/supporters/');
           }
         }
       ]
