@@ -8,6 +8,7 @@ COPY packages/core/package.json ./packages/core/
 COPY apps/renderer/package.json ./apps/renderer/
 COPY apps/server/package.json ./apps/server/
 COPY apps/desktop/package.json ./apps/desktop/
+COPY apps/website/package.json ./apps/website/
 COPY scripts/postinstall.cjs ./scripts/postinstall.cjs
 # Full install (not --workspace-scoped): build:renderer/webserver/migrations invoke
 # root-level devDependencies (vite, rimraf, typescript) directly, not just workspace deps.
