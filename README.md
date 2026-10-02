@@ -47,12 +47,16 @@ Invoice Builder is an **offline-first, open-source invoicing and quoting applica
 
 **Docker:**
 
+Install Git and Docker with the Compose plugin, then clone the repository to obtain the Compose file:
+
 ```bash
+git clone https://github.com/piratuks/invoice-builder.git
+cd invoice-builder
 docker compose pull
 docker compose up -d
 ```
 
-Then open the frontend container's port in your browser and create or connect a database. See [Quick Start](https://piratuks.github.io/invoice-builder/docs/installation/quick-start/) and [Self-Hosting (Docker)](https://piratuks.github.io/invoice-builder/docs/installation/docker/) for details.
+Then open [http://localhost:3001](http://localhost:3001) in your browser and create or connect a database. See [Quick Start](https://piratuks.github.io/invoice-builder/docs/installation/quick-start/) and [Self-Hosting (Docker)](https://piratuks.github.io/invoice-builder/docs/installation/docker/) for details.
 
 ## Documentation
 

@@ -4,6 +4,8 @@ title: Running Locally
 
 # Running Locally
 
+Install Git and **Node.js 24 LTS** (which includes npm) before following the steps below.
+
 Clone the repository, install dependencies, and start the development server:
 
 ## Electron (Desktop App)

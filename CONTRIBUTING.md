@@ -109,7 +109,7 @@ npm run format
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the [LICENSE](LICENSE.md) file.
+By contributing to this project, you agree that your contributions will be licensed under the [LICENSE](LICENSE) file.
 
 ## Conclusion
 
