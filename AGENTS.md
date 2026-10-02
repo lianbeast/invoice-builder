@@ -37,6 +37,7 @@ Use this workflow for:
 
 - Run npm installs, updates, and dependency pruning from the repository root. Keep the single `package-lock.json` at the root; do not create workspace-local lockfiles.
 - Declare dependencies in the workspace that owns them. The root manifest is reserved for shared orchestration, testing, packaging, and release tooling.
+  - Exception: `sqlite3` is also listed as a root `dependencies` entry even though `packages/core` owns it. `electron-builder` (26.3.0+) determines which `node_modules` to include in a packaged build by walking the root `package.json`'s `dependencies`; with an empty root `dependencies`, it silently ships zero `node_modules`, breaking any native module required at runtime by the Electron main process (see `apps/desktop/vite.main.config.ts` `rollupOptions.external`). Do not remove this entry without re-verifying packaging via `npx electron-builder --config apps/desktop/electron-builder.yml --win --x64 --dir` and `npx asar list release/win-unpacked/resources/app.asar | findstr sqlite3`.
 - Run a workspace command with `npm run <script> -w @invoice-builder/<workspace>`; use root scripts only for cross-workspace workflows.
 - npm may hoist packages to the root `node_modules`. Do not manually manage workspace `node_modules` directories.
 - Treat `dist-renderer/`, `dist-desktop/`, `dist-server/`, and `dist-migrations/` as generated build output. Local runtime data belongs in `app-data/`; containers use `/app-data`.
