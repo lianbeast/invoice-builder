@@ -3,7 +3,7 @@ slug: /changelog
 title: Changelog
 ---
 
-## [Date], version 3.1.0
+## 2026-10-02, version 3.1.0
 
 New features & improvements
 

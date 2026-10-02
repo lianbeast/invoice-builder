@@ -137,3 +137,20 @@ PG_POOL_IDLE_TIMEOUT_MS=45000
 WEBSERVER_CLEANUP_INTERVAL_MS=120000
 WEBSERVER_SESSION_TTL_MS=3600000
 ```
+
+## Multi-session web mode & security
+
+Web/Docker mode supports multiple independent browser sessions without a shared server-wide current database:
+
+- Each browser session receives an opaque server-issued session token.
+- Each session/workspace is bound to its selected SQLite or PostgreSQL database.
+- Requests resolve the database from the session context, so one browser cannot switch another browser's active database.
+- Sessions expire after `WEBSERVER_SESSION_TTL_MS` of inactivity, and stale database handles are cleaned up every `WEBSERVER_CLEANUP_INTERVAL_MS`.
+- Session tokens are held in `HttpOnly` cookies and are not accessible to browser scripts.
+- Connection details (host, port, credentials) are never persisted in the browser; reconnect after a backend restart.
+
+:::warning[Deploy behind HTTPS]
+The reverse proxy in front of the backend must forward `X-Forwarded-Proto: https` so the session cookie is marked `Secure`. Without HTTPS, session cookies are sent over plaintext connections.
+:::
+
+This is session isolation, not account authentication. The application has no user login, roles, or workspace membership system. Electron desktop windows use separate database contexts locally and are unaffected by this section.

@@ -12,7 +12,8 @@ const config: Config = {
   url: 'https://piratuks.github.io',
   baseUrl: '/invoice-builder/',
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap'
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap',
+    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap'
   ],
   trailingSlash: true,
   onBrokenLinks: 'throw',
@@ -54,7 +55,7 @@ const config: Config = {
     ]
   ],
   themeConfig: {
-    image: 'img/invoice-form.jpg',
+    image: 'img/invoice-pdf-preview.jpg',
     colorMode: { defaultMode: 'dark', disableSwitch: false, respectPrefersColorScheme: false },
     navbar: {
       title: 'Invoice Builder',
