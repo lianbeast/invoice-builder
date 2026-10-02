@@ -16,6 +16,11 @@ files:
   - node_modules/**
   - package.json
 
+# sqlite3 ships a compiled .node binary; native addons can't be dlopen'd from inside app.asar
+asarUnpack:
+  - '**/node_modules/sqlite3/**/*'
+  - '**/node_modules/bindings/**/*'
+
 extraMetadata:
   main: dist-desktop/main/main.cjs
 
