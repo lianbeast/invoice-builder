@@ -74,24 +74,55 @@ docker compose -f docker-compose.standalone.yml up -d
 
 ## Running without Docker Compose
 
-`docker pull` only downloads the image. To start the single-container image directly, provide the startup service and compiled migration directory:
+`docker pull` only downloads the image. To start the single-container image directly, use the commands for your shell below. They configure the startup service, database directory, and compiled migration directory.
+
+### Bash (Linux / macOS)
+
+Use a backslash (`\`) to continue the command on the next line:
 
 ```bash
 docker pull ghcr.io/piratuks/invoice-builder:latest
+
 docker run -d \
-  --name invoice-builder \
-  -p 3001:3001 \
-  -e SERVICE=all \
-  -e NODE_ENV=docker \
-  -e FE_SERVER_URL=http://localhost:3001 \
-  -e MIGRATIONS_PATH=/app/dist-migrations \
-  -v invoice-builder-data:/app-data \
-  ghcr.io/piratuks/invoice-builder:latest
+	--name invoice-builder \
+	-p 3001:3001 \
+	-e SERVICE=all \
+	-e NODE_ENV=docker \
+	-e DB_DIRECTORY=/app-data \
+	-e PORT=3000 \
+	-e DEV_SERVER_URL=0.0.0.0 \
+	-e FE_SERVER_URL=http://localhost:3001 \
+	-e MIGRATIONS_PATH=/app/dist-migrations \
+	-v invoice-builder-data:/app-data \
+	ghcr.io/piratuks/invoice-builder:latest
 ```
+
+### PowerShell (Windows)
+
+Use a backtick (`` ` ``) to continue the command on the next line:
+
+```powershell
+docker pull ghcr.io/piratuks/invoice-builder:latest
+
+docker run -d `
+	--name invoice-builder `
+	-p 3001:3001 `
+	-e SERVICE=all `
+	-e NODE_ENV=docker `
+	-e DB_DIRECTORY=/app-data `
+	-e PORT=3000 `
+	-e DEV_SERVER_URL=0.0.0.0 `
+	-e FE_SERVER_URL=http://localhost:3001 `
+	-e MIGRATIONS_PATH=/app/dist-migrations `
+	-v invoice-builder-data:/app-data `
+	ghcr.io/piratuks/invoice-builder:latest
+```
+
+The continuation character must be the last character on its line, with no trailing spaces.
 
 Open `http://localhost:3001` after the container starts. Port `3000` is used internally by nginx and does not need to be published. Add `-p 3000:3000` only when direct access to the backend API is required.
 
-The `SERVICE` and `MIGRATIONS_PATH` values are supplied automatically when using `docker compose`; they are required here because `docker pull` does not apply Compose configuration.
+The `SERVICE`, `DB_DIRECTORY`, and `MIGRATIONS_PATH` values are supplied automatically when using `docker compose`; they are required here because `docker pull` does not apply Compose configuration. `DB_DIRECTORY=/app-data` points the backend to the mounted data volume.
 
 ---
 
