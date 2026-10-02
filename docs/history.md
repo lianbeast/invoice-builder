@@ -3,7 +3,7 @@ slug: /changelog
 title: Changelog
 ---
 
-## 2026-10-02, version 3.1.1
+## 2026-10-02, version 3.1.2
 
 New features & improvements
 
@@ -12,7 +12,7 @@ New features & improvements
 
 Bug fixes
 
-- Fixed the packaged Windows/Linux/macOS desktop app failing to start with "Cannot find module 'sqlite3'" by unpacking the native `sqlite3` module from the app archive.
+- Fixed the packaged Windows/Linux/macOS desktop app failing to start with "Cannot find module 'sqlite3'", caused by the packager silently excluding all `node_modules` from the build and the native `sqlite3` binary not being unpacked from the app archive.
 
 ## 2026-09-30, version 3.0.4
 
