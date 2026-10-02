@@ -101,6 +101,9 @@ export default function HomePage() {
                 <Link className="home-button home-button--quiet" to="/docs/guides/">
                   Explore the guides
                 </Link>
+                <Link className="home-button home-button--quiet" to="/docs/installation/#try-the-live-demo">
+                  Try demo
+                </Link>
               </div>
               <p className="home-hero__aside">
                 Free and open source <span>·</span> Desktop or self-hosted

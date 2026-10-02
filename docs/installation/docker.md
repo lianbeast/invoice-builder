@@ -11,6 +11,14 @@ This option is ideal if you want:
 - Centralized access from multiple machines
 - Easy backups via mounted volumes
 
+## Try before self-hosting
+
+[Open the public Docker demo](https://invoice-builder-sha-a014125.onrender.com) to try the app without installing it. It runs on Render's free plan and may take a moment to wake up.
+
+:::warning[Sample data only]
+Demo databases may be accessible to other visitors and can disappear without notice. Do not upload real invoices, personal information, or database credentials. The public demo is separate from your own Docker deployment, where data stays on your configured server or database.
+:::
+
 ## Docker Image
 
 A pre-built image is published automatically to GitHub Container Registry on every push to `main` and on every version tag:

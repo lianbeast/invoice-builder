@@ -39,6 +39,10 @@ Invoice Builder is an **offline-first, open-source invoicing and quoting applica
 
 ## Quick start
 
+**Try the demo:** [Open Invoice Builder in your browser](https://invoice-builder-sha-a014125.onrender.com) without installing anything.
+
+> This public Docker demo runs on Render's free plan and may take a moment to wake up. Use fictional data only: databases may be accessible to other visitors and can disappear without notice. Do not upload real invoices, personal information, or database credentials. This demo is separate from desktop and self-hosted installations, which store data on your own device or configured server.
+
 **Desktop:** download the latest build for your platform from [Releases](https://github.com/piratuks/invoice-builder/releases).
 
 **Docker:**

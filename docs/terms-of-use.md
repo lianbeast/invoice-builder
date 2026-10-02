@@ -1,6 +1,6 @@
 # TERMS OF USE
 
-**Last updated:** 2025-11-18
+**Last updated:** 2026-10-02
 
 Thank you for using **Invoice Builder** (“the Application”). These Terms of Use (“Terms”) govern your access to and use of this software. By downloading, installing, or using the Application, you agree to these Terms.
 
@@ -10,7 +10,13 @@ If you do not agree with these Terms, you must not use the Application.
 
 ## 1. Overview
 
-The Application is a free, open-source desktop software tool that allows users to create and manage invoices, quotations, clients, items, and businesses. All data is stored locally on the user’s machine. No data is transmitted to the developer or any third party.
+The Application is a free, open-source desktop and self-hosted web software tool that allows users to create and manage invoices, quotations, clients, items, and businesses. Desktop and self-hosted installations store data on your device or configured server or database; they do not send application data to the developer.
+
+### Public Demo
+
+The optional [public demo](https://invoice-builder-sha-a014125.onrender.com) is hosted on Render for evaluation only. Unlike your own installation, it sends and stores entered data on that hosted service. Use fictional data only: databases may be accessible to other visitors and the service operator. Do not upload real invoices, personal information, backups containing real data, or database credentials.
+
+The demo runs on Render's free plan, may take a moment to wake up, and may become unavailable or lose data without notice. It is not intended for production use and provides no guaranteed storage, retention, backup, or recovery. The local-storage and no-cloud statements below apply to desktop and self-hosted installations, not this demo; local storage includes your configured server or database.
 
 ---
 

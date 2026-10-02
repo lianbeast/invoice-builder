@@ -1,13 +1,21 @@
 # PRIVACY POLICY
 
-**Last updated:** 2025-11-18
+**Last updated:** 2026-10-02
 
 This Privacy Policy explains how **Invoice Builder** (“the Application”) handles your information.  
-The Application is designed with privacy in mind and stores all data **locally** on your device.
+For desktop installations, data stays on your device or in a database server you configure. For self-hosted web/Docker installations, data stays on your configured server or database.
 
-The developer (“we,” “us,” “our”) does **not** collect, transmit, store, or process any personal data.
+The developer (“we,” “us,” “our”) does **not** receive your application data from those installations. Access to a server or database you configure depends on its operator and your access settings.
 
 By using the Application, you agree to this Privacy Policy.
+
+## Public Demo Exception
+
+The optional [public demo](https://invoice-builder-sha-a014125.onrender.com) runs on Render, not on your device. Data you enter is sent to and stored on that hosted service, where the service operator may have access to it. Render may process request metadata and logs under [its privacy policy](https://render.com/privacy).
+
+Use fictional data only. Demo databases may be accessible to other visitors. Do not upload real invoices, personal information, backups containing real data, or database credentials. The demo uses temporary storage on Render's free plan; data can disappear without notice and has no guaranteed retention period or recovery.
+
+The local-storage and no-cloud statements in the following sections apply to desktop and self-hosted installations, not this public demo. In those sections, local storage includes your configured server or database; it does not necessarily mean the browser's device.
 
 ---
 
